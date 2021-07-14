@@ -133,7 +133,7 @@ const updateBookById = (request, h) => {
   if (readPage > pageCount) {
     const response = h.response({
       status: 'fail',
-      message: 'Gagal menambahkan buku. readPage tidak boleh lebih besar dari pageCount',
+      message: 'Gagal memperbarui buku. readPage tidak boleh lebih besar dari pageCount',
     });
     response.code(400);
     return response;
@@ -162,9 +162,9 @@ const updateBookById = (request, h) => {
   }
   const response = h.response({
     status: 'fail',
-    messsage: 'Gagal memperbarui buku. Id tidak ditemukan',
+    message: 'Gagal memperbarui buku. Id tidak ditemukan',
   });
-  response.code(500);
+  response.code(404);
   return response;
 };
 
